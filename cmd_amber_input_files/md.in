@@ -1,0 +1,14 @@
+production md
+&cntrl
+irest=1, ntx=5,    ! restart MD
+imin=0,              ! run MD
+ntb=2, ntp=1, taup=2.0, pres0=1.0,  ! periodic box
+ntpr=10000, ntwr=10000, ntwx=10000,
+ntt=3, gamma_ln=1.0, tempi = 300.0, temp0 = 300.0,
+ntf=2, ntc=2, iwrap=1,     ! SHAKE
+ig=-1,
+nstlim=500000000, dt=0.004, ! steptime
+cut=10.0,
+ioutfm=1,
+iwrap=1,
+/

@@ -1,0 +1,14 @@
+initial minimisation solvent + ions
+&cntrl
+  imin   = 1,
+  maxcyc = 500,
+  ncyc   = 250,
+  ntb    = 1,
+  ntr    = 1,
+  cut    = 8,
+ /
+Hold the RNA fixed
+500.0
+RES 1 220
+END
+END
