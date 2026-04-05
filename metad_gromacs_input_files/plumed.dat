@@ -1,0 +1,38 @@
+# =============================================
+# PLUMED input
+# =============================================
+
+INCLUDE FILE=atom_groups.dat
+
+# Contact number between Mg and Asp
+mg_asp_contacts: COORDINATION ...
+  GROUPA=mg_ions
+  GROUPB=asp_od
+  R_0=0.28
+  NLIST
+  NL_CUTOFF=0.4
+  NL_STRIDE=1
+...
+
+# Contact number between Arg and Asp
+arg_asp_contacts: COORDINATION ...
+  GROUPA=arg_nh  
+  GROUPB=asp_od
+  R_0=0.35
+  NLIST
+  NL_CUTOFF=0.5
+  NL_STRIDE=1
+...
+
+# Metadynamics
+metad: METAD ...
+  ARG=mg_asp_contacts,arg_asp_contacts
+  PACE=500
+  HEIGHT=1.5
+  SIGMA=0.5,0.5
+  FILE=HILLS
+  TEMP=300.0
+  BIASFACTOR=15
+...
+
+PRINT ARG=mg_asp_contacts,arg_asp_contacts,metad.bias STRIDE=500 FILE=COLVAR FMT=%8.4f
