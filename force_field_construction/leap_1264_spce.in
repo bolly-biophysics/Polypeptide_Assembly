@@ -1,0 +1,9 @@
+source leaprc.protein.ff14SB
+source leaprc.water.spce
+loadamberparams frcmod.spce
+loadamberparams frcmod.ionsjc_spce
+loadamberparams frcmod.ions234lm_1264_spce
+model=loadpdb 10_ppnn_MgCl2.pdb
+solvateoct model SPCBOX 14.0
+saveamberparm model pep-pep.prmtop pep-pep.inpcrd
+quit

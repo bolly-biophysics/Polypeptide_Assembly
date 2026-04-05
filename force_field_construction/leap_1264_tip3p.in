@@ -1,0 +1,9 @@
+source leaprc.protein.ff14SB
+source leaprc.water.tip3p
+loadamberparams frcmod.tip3p
+loadamberparams frcmod.ionsjc_tip3p
+loadamberparams frcmod.ions234lm_1264_tip3p
+model=loadpdb 10_ppnn_MgCl2.pdb
+solvateoct model TIP3PBOX 14.0
+saveamberparm model pep-pep.prmtop pep-pep.inpcrd
+quit
